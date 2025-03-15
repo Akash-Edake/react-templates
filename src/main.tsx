@@ -1,5 +1,5 @@
 import * as ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router';
+import { createMemoryRouter, RouterProvider } from 'react-router';
 import App from './App';
 import Layout from './common/layout/Dashboard';
 import DashboardPage from './common/pages';
@@ -8,7 +8,7 @@ import OrdersPage from './common/pages/orders';
 // import DashboardPage from './pages';
 // import OrdersPage from './pages/orders';
 
-const router = createBrowserRouter([
+const router = createMemoryRouter([
   {
     Component: App,
     children: [
