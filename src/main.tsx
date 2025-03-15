@@ -28,7 +28,10 @@ const router = createMemoryRouter([
       },
     ],
   },
-]);
+],{
+    initialEntries: ["/", "/orders"],
+    initialIndex: 1,
+  });
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <>
