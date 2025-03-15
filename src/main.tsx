@@ -1,5 +1,5 @@
 import * as ReactDOM from 'react-dom/client';
-import { createMemoryRouter, RouterProvider } from 'react-router';
+import { createHashRouter, RouterProvider } from 'react-router';
 import App from './App';
 import Layout from './common/layout/Dashboard';
 import DashboardPage from './common/pages';
@@ -8,7 +8,7 @@ import OrdersPage from './common/pages/orders';
 // import DashboardPage from './pages';
 // import OrdersPage from './pages/orders';
 
-const router = createMemoryRouter([
+const router = createHashRouter([
   {
     Component: App,
     children: [
@@ -28,10 +28,7 @@ const router = createMemoryRouter([
       },
     ],
   },
-],{
-    initialEntries: ["/", "/orders"],
-    initialIndex: 1,
-  });
+]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <>
