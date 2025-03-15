@@ -1,5 +1,5 @@
 import * as ReactDOM from 'react-dom/client';
-import { createHashRouter, RouterProvider } from 'react-router';
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router';
 import App from './App';
 import Layout from './common/layout/Dashboard';
 import DashboardPage from './common/pages';
@@ -8,7 +8,7 @@ import OrdersPage from './common/pages/orders';
 // import DashboardPage from './pages';
 // import OrdersPage from './pages/orders';
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     Component: App,
     children: [
@@ -24,6 +24,7 @@ const router = createHashRouter([
             path: 'orders',
             Component: OrdersPage,
           },
+          { path: '*', Component: () => <Navigate to="/" replace /> }
         ],
       },
     ],
